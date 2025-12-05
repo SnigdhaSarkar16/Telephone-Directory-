@@ -12,13 +12,21 @@ It allows users to add, view, edit, delete, and search contacts through a clean 
 ![Form Screenshot](images/form.png)
 
 🚀 Features
+
 ➕ Add new contacts
+
 📝 Edit existing contacts
+
 ❌ Delete contacts
+
 🔍 Search contacts by first name, last name, or phone number
+
 📋 View all contacts in a clean table
+
 🗄️ MySQL database backend
+
 ⚡ Fast searching with indexed columns
+
 🌐 Browser-based web application (Flask + HTML templates)
 
 🛠️ Tech Stack
@@ -34,15 +42,16 @@ It allows users to add, view, edit, delete, and search contacts through a clean 
 
 telephonedirectory/
 
-├── app.py                # Flask backend server
+├── app.py               
+
 ├── config.py             # MySQL connection via .env variables
-├── database.sql          # SQL script for database setup
-├── .env                  # Hidden file (database credentials)
-├── .gitignore            # Prevents uploading sensitive files
+├── database.sql          
+├── .env                 
+├── .gitignore            
 └── templates/
-       ├── index.html     # Homepage (list + add contact)
-       ├── search.html    # Search contact page
-       └── edit.html      # Edit contact page
+       ├── index.html     
+       ├── search.html    
+       └── edit.html      
 
 🧵 Installation & Setup
 
@@ -63,8 +72,11 @@ Open MySQL Workbench → run database.sql.
 This script will:
 
 Create the database
+
 Create the Contacts table
+
 Insert 20 sample records
+
 Create an index for fast searching
 
 🔐 Environment Variables
@@ -72,17 +84,20 @@ Create an index for fast searching
 Create a .env file (DO NOT upload this file):
 
 DB_HOST=localhost
+
 DB_USER=root
+
 DB_PASS=yourpassword
+
 DB_NAME=TelephoneDirectory
 
 ▶️ Running the Application
 
 Start the Flask server:
-python app.py
+ python app.py
 
 Open the application in a browser:
-http://127.0.0.1:5000/
+ http://127.0.0.1:5000/
 
 🔍 Search Algorithm
 
@@ -100,5 +115,6 @@ WHERE first_name LIKE '%query%'
 MySQL uses B-Tree indexes, making search fast and efficient.
 
 Author 
+
 Snigdha 
 
