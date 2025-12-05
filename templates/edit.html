@@ -1,0 +1,25 @@
+<!-- templates/edit.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Contact</title>
+  <style>
+    body { font-family: Arial; margin: 30px; background:#f6f8fb }
+    form { max-width:600px; background:white; padding:12px; border:1px solid #e0e0e0 }
+    input, textarea { width:100%; padding:8px; margin-top:6px; box-sizing:border-box; }
+  </style>
+</head>
+<body>
+  <h1>Edit Contact</h1>
+  <form method="post">
+    <input name="first_name" value="{{ contact.first_name }}" required>
+    <input name="last_name" value="{{ contact.last_name }}" required>
+    <input name="phone_number" value="{{ contact.phone_number }}" required>
+    <input name="email" value="{{ contact.email }}">
+    <textarea name="address" rows="3">{{ contact.address }}</textarea>
+    <button type="submit">Save</button>
+    <a href="{{ url_for('index') }}">Cancel</a>
+  </form>
+</body>
+</html>

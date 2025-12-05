@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Search Contacts</title>
+  <style>
+    body { font-family: Arial; margin: 30px; background: #f6f8fb; }
+    table { border-collapse: collapse; width: 100%; background:white; }
+    th, td { border:1px solid #ddd; padding:8px; }
+    form { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Search Contacts</h1>
+  <form method="post">
+    <input type="text" name="query" placeholder="Search by first name, last name or phone" value="{{ query }}">
+    <button type="submit">Search</button>
+    <a href="{{ url_for('index') }}">Back</a>
+  </form>
+
+  {% if results %}
+    <h3>Results for "{{ query }}"</h3>
+    <table>
+      <thead><tr><th>First</th><th>Last</th><th>Phone</th><th>Email</th><th>Address</th></tr></thead>
+      <tbody>
+        {% for c in results %}
+        <tr>
+          <td>{{ c.first_name }}</td>
+          <td>{{ c.last_name }}</td>
+          <td>{{ c.phone_number }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.address }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    {% if query %}<p>No results found.</p>{% endif %}
+  {% endif %}
+</body>
+</html>
