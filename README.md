@@ -45,9 +45,13 @@ telephonedirectory/
 ├── app.py               
 
 ├── config.py             # MySQL connection via .env variables
+
 ├── database.sql          
+
 ├── .env                 
-├── .gitignore            
+
+├── .gitignore           
+
 └── templates/
        ├── index.html     
        ├── search.html    
@@ -114,7 +118,7 @@ WHERE first_name LIKE '%query%'
 
 MySQL uses B-Tree indexes, making search fast and efficient.
 
-Author 
+AUTHOR
 
 Snigdha 
 
